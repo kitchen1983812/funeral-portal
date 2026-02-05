@@ -95,6 +95,29 @@ const CsvImport = () => {
         setLogs(prev => [...prev, { message, type, time: new Date().toLocaleTimeString() }]);
     };
 
+    const downloadTemplate = () => {
+        const standardCols = STANDARD_COLUMNS[targetTable];
+        // Example headers: standard columns + some example extended columns
+        let headers = [...standardCols];
+
+        if (targetTable === 'funeral_companies') {
+            headers.push('example_extended_col_1', 'example_extended_col_2');
+        } else {
+            headers.push('features', 'parking_count', 'founded_year');
+        }
+
+        const csvContent = headers.join(',') + '\n';
+        // Add BOM for Excel compatibility
+        const blob = new Blob([new Uint8Array([0xEF, 0xBB, 0xBF]), csvContent], { type: 'text/csv;charset=utf-8;' });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = url;
+        link.setAttribute('download', `${targetTable}_template.csv`);
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    };
+
     return (
         <div className="container py-xl">
             <h1 className="section-title">CSV一括インポート</h1>
@@ -113,6 +136,14 @@ const CsvImport = () => {
                 </div>
 
                 <div style={{ marginBottom: '1.5rem' }}>
+                    <button
+                        onClick={downloadTemplate}
+                        className="btn btn-outline"
+                        style={{ width: '100%', marginBottom: '1rem', cursor: 'pointer' }}
+                    >
+                        CSVテンプレートをダウンロード
+                    </button>
+
                     <label style={{ display: 'block', fontWeight: 'bold', marginBottom: '0.5rem' }}>CSVファイルを選択</label>
                     <input
                         type="file"
