@@ -10,8 +10,8 @@ import CompanyEdit from './pages/admin/CompanyEdit';
 import HomesList from './pages/admin/HomesList';
 import HomeEdit from './pages/admin/HomeEdit';
 import CsvImport from './pages/admin/CsvImport';
-
-
+import FAQ from './pages/FAQ';
+import About from './pages/About';
 
 import SearchArea from './pages/search/SearchArea';
 import SearchResult from './pages/search/SearchResult';
@@ -26,6 +26,8 @@ function App() {
           <Route path="/search/area/:pref_slug" element={<SearchArea />} />
           <Route path="/search/result" element={<SearchResult />} />
           <Route path="/detail/:id" element={<Detail />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/faq" element={<FAQ />} />
           <Route path="/inquiry" element={<div className="container py-xl"><h2>お問い合わせ（準備中）</h2></div>} />
 
           {/* Admin Routes */}
