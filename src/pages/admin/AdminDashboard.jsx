@@ -16,6 +16,11 @@ const AdminDashboard = () => {
                     <p>斎場（施設）の登録・編集・削除を行います。</p>
                     <Link to="/admin/homes" className="btn btn-primary" style={{ marginTop: '1rem', display: 'inline-block' }}>斎場一覧へ</Link>
                 </div>
+                <div className="card" style={{ padding: '2rem' }}>
+                    <h2>CSVインポート</h2>
+                    <p>CSVファイルからデータを一括登録します。</p>
+                    <Link to="/admin/import" className="btn btn-secondary" style={{ marginTop: '1rem', display: 'inline-block' }}>インポート画面へ</Link>
+                </div>
             </div>
         </div>
     );

@@ -9,6 +9,9 @@ import CompaniesList from './pages/admin/CompaniesList';
 import CompanyEdit from './pages/admin/CompanyEdit';
 import HomesList from './pages/admin/HomesList';
 import HomeEdit from './pages/admin/HomeEdit';
+import CsvImport from './pages/admin/CsvImport';
+
+
 
 import SearchArea from './pages/search/SearchArea';
 import SearchResult from './pages/search/SearchResult';
@@ -31,6 +34,7 @@ function App() {
           <Route path="/admin/companies/:id" element={<CompanyEdit />} />
           <Route path="/admin/homes" element={<HomesList />} />
           <Route path="/admin/homes/:id" element={<HomeEdit />} />
+          <Route path="/admin/import" element={<CsvImport />} />
 
           <Route path="*" element={<div className="container py-xl"><h2>ページが見つかりません</h2></div>} />
         </Routes>
