@@ -12,7 +12,9 @@ import HomeEdit from './pages/admin/HomeEdit';
 import CsvImport from './pages/admin/CsvImport';
 import FAQ from './pages/FAQ';
 import About from './pages/About';
+import About from './pages/About';
 import Company from './pages/Company';
+import Inquiry from './pages/Inquiry';
 
 import SearchArea from './pages/search/SearchArea';
 import SearchResult from './pages/search/SearchResult';
@@ -30,7 +32,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/company" element={<Company />} />
           <Route path="/faq" element={<FAQ />} />
-          <Route path="/inquiry" element={<div className="container py-xl"><h2>お問い合わせ（準備中）</h2></div>} />
+          <Route path="/inquiry" element={<Inquiry />} />
 
           {/* Admin Routes */}
           <Route path="/admin" element={<AdminDashboard />} />
