@@ -12,7 +12,7 @@ import HomeEdit from './pages/admin/HomeEdit';
 import CsvImport from './pages/admin/CsvImport';
 import FAQ from './pages/FAQ';
 import About from './pages/About';
-import About from './pages/About';
+
 import Company from './pages/Company';
 import Inquiry from './pages/Inquiry';
 
